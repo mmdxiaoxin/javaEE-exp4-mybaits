@@ -35,14 +35,14 @@ public class BookController extends HttpServlet {
                 String id = request.getParameter("id");
                 String name = request.getParameter("name");
                 String author = request.getParameter("author");
-                String publish = request.getParameter("press");
-                String publishDate = request.getParameter("pressDate");
+                String press = request.getParameter("press");
+                String pressDate = request.getParameter("pressDate");
                 String price = request.getParameter("price");
                 Book book = new Book();
                 book.setBookName(name);
                 book.setAuthor(author);
-                book.setPress(publish);
-                book.setPressDate(DateUtil.strToUtilDate(publishDate));
+                book.setPress(press);
+                book.setPressDate(DateUtil.strToUtilDate(pressDate));
                 book.setPrice(Float.parseFloat(price));
                 if (id == null || id.isEmpty()) {
                     booksService.save(book);

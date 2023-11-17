@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.exp4.utils.BooksMapper">
+<mapper namespace="com.example.exp4.mapper.BooksMapper">
 
     <!-- 添加图书 -->
     <insert id="addBook" parameterType="com.example.exp4.models.Book">

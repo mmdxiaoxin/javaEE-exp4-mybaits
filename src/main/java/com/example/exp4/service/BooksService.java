@@ -1,38 +1,40 @@
 package com.example.exp4.service;
 
 import com.example.exp4.models.Book;
+import com.example.exp4.utils.MyBatisUtil;
+import org.apache.ibatis.session.SqlSession;
 
-import java.sql.SQLException;
+import java.io.IOException;
 import java.util.List;
 
 public class BooksService {
-//    private BookDAOImpl bookDAO;
+    private final SqlSession sqlSession;
 
-//    public BooksService() {
-//        this.bookDAO = new BookDAOImpl();
-//    }
+    public BooksService() throws IOException {
+        this.sqlSession = MyBatisUtil.getSqlSessionFactory().openSession();
+    }
 
     // Get all books
-    public List<Book> list() throws SQLException {
-        return null;
+    public List<Book> list() {
+        return sqlSession.selectList("getAllBooks");
     }
 
     // Get book by ID
-    public Book getById(int id) throws SQLException {
-        return null;
+    public Book getById(int id)  {
+        return sqlSession.selectOne("getBookById", id);
     }
 
     // Insert or update book
-    public void save(Book book) throws SQLException {
+    public void save(Book book)  {
         if (book.getId() == 0) {
-//            bookDAO.save(book);
+            sqlSession.insert("addBook", book);
         } else {
-//            bookDAO.updateById(book.getId(), book);
+            sqlSession.update("updateBook", book);
         }
     }
 
     // Delete book
-    public void delete(int id) throws SQLException {
-//        bookDAO.deleteById(id);
+    public void delete(int id) {
+        sqlSession.delete("deleteBook", id);
     }
 }
