@@ -54,8 +54,8 @@
 <body>
 <form action="${pageContext.request.contextPath}/book-ctrl?action=save" method="post">
     <h2>编辑图书</h2>
-    <label for="name">书名：</label>
-    <input type="text" id="name" name="name" required value="${book.name}">
+    <label for="bookName">书名：</label>
+    <input type="text" id="bookName" name="bookName" required value="${book.bookName}">
 
     <label for="author">作者：</label>
     <input type="text" id="author" name="author" required value="${book.author}">

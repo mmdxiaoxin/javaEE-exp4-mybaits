@@ -66,7 +66,7 @@
     <jsp:useBean id="result" scope="request" type="java.util.List"/>
     <c:forEach items="${result}" var="book" varStatus="stat">
         <tr ${stat.index%2==0 ? 'class="even"' : ''}>
-            <td>${book.name}</td>
+            <td>${book.bookName}</td>
             <td>${book.author}</td>
             <td>${book.press}</td>
             <td>${book.pressDate}</td>

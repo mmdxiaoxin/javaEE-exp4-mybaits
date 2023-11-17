@@ -3,4 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
+
+    <!-- 字符编码集过滤器 -->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.example.exp4.filters.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <!-- 初始化encoding的参数，初始化为UTF—8 -->
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- 登陆验证过滤器 -->
+    <!--    <filter>-->
+    <!--        <filter-name>AuthenticationFilter</filter-name>-->
+    <!--        <filter-class>com.example.exp4.filters.AuthenticationFilter</filter-class>-->
+    <!--    </filter>-->
+    <!--    <filter-mapping>-->
+    <!--        <filter-name>AuthenticationFilter</filter-name>-->
+    <!--        <url-pattern>/*</url-pattern>-->
+    <!--    </filter-mapping>-->
+
 </web-app>
