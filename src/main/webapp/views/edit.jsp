@@ -6,6 +6,8 @@
   用于编辑图书信息的页面
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -54,6 +56,8 @@
 <body>
 <form action="${pageContext.request.contextPath}/book-ctrl?action=save" method="post">
     <h2>编辑图书</h2>
+    <input type="hidden" id="id" name="id" value="${book.id}">
+
     <label for="bookName">书名：</label>
     <input type="text" id="bookName" name="bookName" required value="${book.bookName}">
 
@@ -64,7 +68,8 @@
     <input type="text" id="press" name="press" required value="${book.press}">
 
     <label for="pressDate">出版日期：</label>
-    <input type="date" id="pressDate" name="pressDate" required value="${book.pressDate}">
+    <input type="date" id="pressDate" name="pressDate" required
+           value="<fmt:formatDate value='${book.pressDate}' pattern='yyyy-MM-dd' />">
 
     <label for="price">价格：</label>
     <input type="number" id="price" name="price" required value="${book.price}">

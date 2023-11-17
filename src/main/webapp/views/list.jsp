@@ -71,7 +71,7 @@
             <td>${book.author}</td>
             <td>${book.press}</td>
             <td>
-                <fmt:formatDate value="${book.pressDate}" pattern="yyyy-MM-dd" />
+                <fmt:formatDate value="${book.pressDate}" pattern="yyyy-MM-dd"/>
             </td>
             <td>${book.price}</td>
             <td>

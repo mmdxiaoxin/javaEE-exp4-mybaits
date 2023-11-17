@@ -6,6 +6,8 @@
   用于添加图书信息的页面
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -55,20 +57,20 @@
 <form action="${pageContext.request.contextPath}/book-ctrl?action=save" method="post">
     <h2>添加图书</h2>
     <label for="bookName">书名：</label>
-    <input type="text" id="bookName" name="bookName" required>
+    <input type="text" id="bookName" name="bookName" required value="${book.bookName}">
 
     <label for="author">作者：</label>
-    <input type="text" id="author" name="author" required>
+    <input type="text" id="author" name="author" required value="${book.author}">
 
     <label for="press">出版社：</label>
-    <input type="text" id="press" name="press" required>
+    <input type="text" id="press" name="press" required value="${book.press}">
 
     <label for="pressDate">出版日期：</label>
-    <input type="date" id="pressDate" name="pressDate" required>
+    <input type="date" id="pressDate" name="pressDate" required
+           value="<fmt:formatDate value='${book.pressDate}' pattern='yyyy-MM-dd' />">
 
     <label for="price">价格：</label>
-    <input type="number" id="price" name="price" required>
-
+    <input type="number" id="price" name="price" required value="${book.price}">
 
     <button type="submit">添加图书</button>
 </form>
