@@ -3,6 +3,8 @@ package com.example.exp4.controllers;
 import com.example.exp4.models.Book;
 import com.example.exp4.service.BooksService;
 import com.example.exp4.utils.DateUtil;
+import com.example.exp4.utils.MyBatisUtils;
+import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +18,9 @@ import java.util.List;
 public class BookController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        BooksService booksService = new BooksService();
+        // 获取当前线程的 SqlSession
+        SqlSession sqlSession = MyBatisUtils.getThreadLocalSqlSession();
+        BooksService booksService = new BooksService(sqlSession);
         String action = request.getParameter("action");
         try {
             if ("list".equals(action)) {

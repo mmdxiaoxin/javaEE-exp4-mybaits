@@ -1,40 +1,43 @@
 package com.example.exp4.service;
 
+import com.example.exp4.mapper.BooksMapper;
 import com.example.exp4.models.Book;
-import com.example.exp4.utils.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 
-import java.io.IOException;
 import java.util.List;
 
 public class BooksService {
     private final SqlSession sqlSession;
+    private final BooksMapper booksMapper;
 
-    public BooksService() throws IOException {
-        this.sqlSession = MyBatisUtil.getSqlSessionFactory().openSession();
+    public BooksService(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
+        this.booksMapper = sqlSession.getMapper(BooksMapper.class);
     }
 
     // Get all books
     public List<Book> list() {
-        return sqlSession.selectList("getAllBooks");
+        return booksMapper.getAllBooks();
     }
 
     // Get book by ID
-    public Book getById(int id)  {
-        return sqlSession.selectOne("getBookById", id);
+    public Book getById(int id) {
+        return booksMapper.getBookById(id);
     }
 
     // Insert or update book
-    public void save(Book book)  {
+    public void save(Book book) {
         if (book.getId() == 0) {
-            sqlSession.insert("addBook", book);
+            booksMapper.addBook(book);
         } else {
-            sqlSession.update("updateBook", book);
+            booksMapper.updateBook(book);
         }
+        sqlSession.commit();
     }
 
     // Delete book
     public void delete(int id) {
-        sqlSession.delete("deleteBook", id);
+        booksMapper.deleteBook(id);
+        sqlSession.commit();
     }
 }
