@@ -33,13 +33,13 @@ public class BookController extends HttpServlet {
                 request.getRequestDispatcher("/views/edit.jsp").forward(request, response);
             } else if ("save".equals(action)) {
                 String id = request.getParameter("id");
-                String name = request.getParameter("name");
+                String bookName = request.getParameter("bookName");
                 String author = request.getParameter("author");
                 String press = request.getParameter("press");
                 String pressDate = request.getParameter("pressDate");
                 String price = request.getParameter("price");
                 Book book = new Book();
-                book.setBookName(name);
+                book.setBookName(bookName);
                 book.setAuthor(author);
                 book.setPress(press);
                 book.setPressDate(DateUtil.strToUtilDate(pressDate));

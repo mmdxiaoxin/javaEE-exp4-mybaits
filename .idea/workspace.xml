@@ -9,20 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e02a1a-7f02-438f-87ad-79ac28223a7e" name="更改" comment="上传代码。">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exp4/mapper/BooksMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/exp4/utils/MyBatisUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="31e02a1a-7f02-438f-87ad-79ac28223a7e" name="更改" comment="测试连接效果。">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exp4/TestMyBaits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exp4/TestMyBaits.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exp4/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exp4/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exp4/service/BooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exp4/service/BooksService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/BooksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BooksMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exp4/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exp4/service/UsersService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +27,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -216,7 +210,7 @@
       <workItem from="1700202516212" duration="4328000" />
       <workItem from="1700223261888" duration="3586000" />
       <workItem from="1700226861270" duration="238000" />
-      <workItem from="1700227124639" duration="1596000" />
+      <workItem from="1700227124639" duration="2043000" />
     </task>
     <task id="LOCAL-00001" summary="上传代码。">
       <option name="closed" value="true" />
@@ -226,7 +220,31 @@
       <option name="project" value="LOCAL" />
       <updated>1700225568037</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修改界面显示内容，以及其他页面的内容">
+      <option name="closed" value="true" />
+      <created>1700228759736</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700228759736</updated>
+    </task>
+    <task id="LOCAL-00003" summary="实现Book的列表展示，通过myBaits连接数据库">
+      <option name="closed" value="true" />
+      <created>1700228825791</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700228825791</updated>
+    </task>
+    <task id="LOCAL-00004" summary="测试连接效果。">
+      <option name="closed" value="true" />
+      <created>1700228836795</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700228836795</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +252,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="上传代码。" />
-    <option name="LAST_COMMIT_MESSAGE" value="上传代码。" />
+    <MESSAGE value="修改界面显示内容，以及其他页面的内容" />
+    <MESSAGE value="实现Book的列表展示，通过myBaits连接数据库" />
+    <MESSAGE value="测试连接效果。" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试连接效果。" />
   </component>
 </project>
