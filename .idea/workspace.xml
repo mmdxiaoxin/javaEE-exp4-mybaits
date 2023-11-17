@@ -9,13 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e02a1a-7f02-438f-87ad-79ac28223a7e" name="更改" comment="测试连接效果。">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exp4/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/exp4/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exp4/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/exp4/service/UsersService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    <list default="true" id="31e02a1a-7f02-438f-87ad-79ac28223a7e" name="更改" comment="实现实验结果。">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +205,7 @@
       <workItem from="1700202516212" duration="4328000" />
       <workItem from="1700223261888" duration="3586000" />
       <workItem from="1700226861270" duration="238000" />
-      <workItem from="1700227124639" duration="2043000" />
+      <workItem from="1700227124639" duration="2314000" />
     </task>
     <task id="LOCAL-00001" summary="上传代码。">
       <option name="closed" value="true" />
@@ -244,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700228836795</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="实现实验结果。">
+      <option name="closed" value="true" />
+      <created>1700229209589</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700229209589</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +258,7 @@
     <MESSAGE value="修改界面显示内容，以及其他页面的内容" />
     <MESSAGE value="实现Book的列表展示，通过myBaits连接数据库" />
     <MESSAGE value="测试连接效果。" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试连接效果。" />
+    <MESSAGE value="实现实验结果。" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现实验结果。" />
   </component>
 </project>

@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -69,7 +70,9 @@
             <td>${book.bookName}</td>
             <td>${book.author}</td>
             <td>${book.press}</td>
-            <td>${book.pressDate}</td>
+            <td>
+                <fmt:formatDate value="${book.pressDate}" pattern="yyyy-MM-dd" />
+            </td>
             <td>${book.price}</td>
             <td>
                 <a href="${pageContext.request.contextPath}/book-ctrl?action=edit&id=${book.id}">修改</a>
@@ -85,5 +88,3 @@
 </table>
 </body>
 </html>
-
-
