@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "BookController", value = "/book-ctrl")
 public class BookController extends HttpServlet {
@@ -61,6 +63,37 @@ public class BookController extends HttpServlet {
                 int idi = Integer.parseInt(id);
                 booksService.delete(idi);
                 response.sendRedirect("book-ctrl?action=list");
+            } else if ("search".equals(action)) {
+                Map<String, Object> conditions = new HashMap<>();
+                String bookName = request.getParameter("bookName");
+                String author = request.getParameter("author");
+                String priceMin = request.getParameter("priceMin");
+                String priceMax = request.getParameter("priceMax");
+                String pressDateStart = request.getParameter("pressDateStart");
+                String pressDateEnd = request.getParameter("pressDateEnd");
+                // 处理模糊匹配的字符串参数
+                if (bookName != null && !bookName.isEmpty()) {
+                    conditions.put("bookName", "%" + bookName + "%");
+                }
+                if (author != null && !author.isEmpty()) {
+                    conditions.put("author", "%" + author + "%");
+                }
+                // 其他参数处理...
+                if (priceMin != null && !priceMin.isEmpty()) {
+                    conditions.put("priceMin", Float.parseFloat(priceMin));
+                }
+                if (priceMax != null && !priceMax.isEmpty()) {
+                    conditions.put("priceMax", Float.parseFloat(priceMax));
+                }
+                if (pressDateStart != null && !pressDateStart.isEmpty()) {
+                    conditions.put("pressDateStart", DateUtil.strToUtilDate(pressDateStart));
+                }
+                if (pressDateEnd != null && !pressDateEnd.isEmpty()) {
+                    conditions.put("pressDateEnd", DateUtil.strToUtilDate(pressDateEnd));
+                }
+                List<Book> books = booksService.getBooksByConditions(conditions);
+                request.setAttribute("result", books);
+                request.getRequestDispatcher("/views/list.jsp").forward(request, response);
             } else {
                 throw new Exception("非法请求！！");
             }

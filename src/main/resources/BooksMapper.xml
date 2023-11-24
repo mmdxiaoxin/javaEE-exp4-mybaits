@@ -41,4 +41,31 @@
         WHERE id = #{id}
     </select>
 
+    <!-- 根据不确定条件查询图书 -->
+    <select id="getBooksByConditions" resultType="com.example.exp4.models.Book" parameterType="java.util.Map">
+        SELECT *
+        FROM books
+        <where>
+            <if test="bookName != null and !bookName.isEmpty()">
+                AND book_name LIKE #{bookName}
+            </if>
+            <if test="author != null and !author.isEmpty()">
+                AND author LIKE #{author}
+            </if>
+            <if test="priceMin != null">
+                AND price &gt;= #{priceMin}
+            </if>
+            <if test="priceMax != null">
+                AND price &lt;= #{priceMax}
+            </if>
+            <if test="pressDateStart != null">
+                AND press_date &gt;= #{pressDateStart}
+            </if>
+            <if test="pressDateEnd != null">
+                AND press_date &lt;= #{pressDateEnd}
+            </if>
+        </where>
+    </select>
+
+
 </mapper>

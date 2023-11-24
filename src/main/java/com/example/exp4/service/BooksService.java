@@ -4,7 +4,10 @@ import com.example.exp4.mapper.BooksMapper;
 import com.example.exp4.models.Book;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BooksService {
     private final SqlSession sqlSession;
@@ -39,5 +42,10 @@ public class BooksService {
     public void delete(int id) {
         booksMapper.deleteBook(id);
         sqlSession.commit();
+    }
+
+    // Get books by conditions
+    public List<Book> getBooksByConditions(Map<String, Object> conditions) {
+        return booksMapper.getBooksByConditions(conditions);
     }
 }

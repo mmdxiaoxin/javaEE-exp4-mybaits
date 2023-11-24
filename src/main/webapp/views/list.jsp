@@ -49,9 +49,34 @@
             color: #007bff;
             margin-right: 10px;
         }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-container input {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
+<div class="search-container">
+    <form action="${pageContext.request.contextPath}/book-ctrl?action=search" method="post">
+        <label for="bookName">书名：</label>
+        <input type="text" id="bookName" name="bookName">
+
+        <label for="author">作者：</label>
+        <input type="text" id="author" name="author">
+
+        <label for="priceMin">最低价格：</label>
+        <input type="number" id="priceMin" name="priceMin">
+
+        <label for="priceMax">最高价格：</label>
+        <input type="number" id="priceMax" name="priceMax">
+
+        <button type="submit">搜索</button>
+    </form>
+</div>
 <table>
     <tr>
         <th colspan="8">图书信息详细列表</th>
